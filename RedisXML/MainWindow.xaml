@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Ribbon x:Name="RibbonWin"  SelectedIndex="0" ShowQuickAccessToolBarOnTop="False">
+        <Ribbon x:Name="RibbonWin"  SelectedIndex="0"  ShowQuickAccessToolBarOnTop="False">
             <RibbonTab Header="Ogólne">
                 <RibbonGroup x:Name="CustomersRG" Header="Customers" HorizontalContentAlignment="Center">
                     <RibbonButton x:Name="RedisToXMLBtn" LargeImageSource="Images/customers.png" Label="Hello!" Margin="5,5,0,0" Click="RedisToXMLBtn_Click"/>

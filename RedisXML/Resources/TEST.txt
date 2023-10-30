@@ -1,0 +1,7 @@
+hset book:scifi year 2021 autor Kapinsky1 grade 2.1
+hset book:scifi1 year 2022 autor Kapinsky2 grade 2.2
+hset book:scifi2 year 2023 autor Kapinsky3 grade 2.3
+hset book:scifi3 year 2024 autor Kapinsky4 grade 2.4
+hset book:scifi4 year 2025 autor Kapinsky5 grade 2.5
+hset book:scifi5 year 2026 autor Kapinsky6 grade 2.6
+hset book:scifi6 year 2027 autor Kapinsky7 grade 2.7

@@ -27,11 +27,19 @@ namespace gender_bender
 
         private void RedisToXMLBtn_Click(object sender, RoutedEventArgs e)
         {
-            string[] filelines = RedisToXML.open();
+            /*string[] filelines = RedisToXML.Open();
             foreach(var strings in filelines)
             {
                 filetextLb.Content += strings + "\n";
+            }*/
+
+
+            string[] lines = RedisToXML.OpenTEST();
+            if (RedisToXML.CheckFileCompatibility(lines))
+            {
+                RedisToXML.ConvertRedisTXT_To_XMLTXT(lines);
             }
+
         }
     }
 }
