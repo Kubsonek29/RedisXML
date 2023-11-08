@@ -99,6 +99,7 @@ namespace gender_bender
                 arguments = arguments.Select(item => item.Replace("\"", "")).ToArray();
 
                 XElement rootElement = new XElement("RedisCommand");
+                rootElement.SetAttributeValue("Key", name);
                 rootElement.SetAttributeValue("Name", command);
                 for (int i = 0; i < arguments.Length; i+=2)
                 {
