@@ -3,22 +3,50 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:gender_bender"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Redis Tool" Height="450" Width="800" AllowDrop="True" Drop="Window_Drop">
     <Grid>
-        <Ribbon x:Name="RibbonWin"  SelectedIndex="0"  ShowQuickAccessToolBarOnTop="False">
-            <RibbonTab Header="Ogólne">
-                <RibbonGroup x:Name="CustomersRG" Header="Customers" HorizontalContentAlignment="Center">
-                    <RibbonButton x:Name="RedisToXMLBtn" LargeImageSource="Images/customers.png" Label="Hello!" Margin="5,5,0,0" Click="RedisToXMLBtn_Click"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="140"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Ribbon x:Name="RibbonWin"  SelectedIndex="0"  ShowQuickAccessToolBarOnTop="False" Grid.ColumnSpan="2">
+            <RibbonTab Header="Konwertery">
+                <RibbonGroup x:Name="AttachFileRG" HorizontalContentAlignment="Center">
+                    <RibbonButton x:Name="AttachFileRB" LargeImageSource="Images/txtfile.png" Label="Załącz plik" Click="AttachFileRB_Click"/>
+                </RibbonGroup>
+                <RibbonGroup x:Name="ConvertXML" HorizontalContentAlignment="Center">
+                    <RibbonButton x:Name="ConvertXMLBtn" LargeImageSource="Images/xmlfile.png" Label="Konwertuj do pliku XML" Click="RedisToXMLBtn_Click"/>
+                </RibbonGroup>
+                <RibbonGroup x:Name="SaveOrExit" HorizontalContentAlignment="Center">
+                    <RibbonButton x:Name="Save" LargeImageSource="Images/addfile.png" Label="Zapisz plik" Click="Save_Click"/>
+                    <RibbonButton x:Name="UnAttachFileBtn" LargeImageSource="Images/deletefile.png" Label="Odłącz plik" Click="UnAttachFileBtn_Click"/>
                 </RibbonGroup>
             </RibbonTab>
         </Ribbon>
-        <ScrollViewer Margin="345,140,10,35">
-            <TextBlock>
-    <Label x:Name="filetextLb"/>
-            </TextBlock>
-        </ScrollViewer>
-        <Label VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Content="Slyszales ze picie piwa poprawia radość z zycia?" Background="LightBlue" FontSize="15"  FontStyle="Italic"/>
+        <Label x:Name="FileStatusLb" Grid.Row="1" Grid.ColumnSpan="2" Content="Załączony plik: Brak" FontSize="19" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  HorizontalAlignment="Stretch" Background="CornflowerBlue" BorderBrush="Black" BorderThickness="2"/>
+        <Border Grid.Row="2" BorderBrush="Black" BorderThickness="2" Margin="5,5,5,5">
+            <DockPanel Grid.Row="1">
+                <Label x:Name="AddedFileLb" Content="Wrzucony plik" DockPanel.Dock="Top" FontSize="15" FontWeight="DemiBold" HorizontalContentAlignment="Center"  VerticalContentAlignment="Center"/>
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <TextBox x:Name="FilePreviewTb" Text="Brak" TextWrapping="Wrap"/>
+                </ScrollViewer>
+            </DockPanel>
+        </Border>
+        <Border Grid.Row="2" Grid.Column="1" BorderBrush="Black" BorderThickness="2" Margin="5,5,5,5">
+            <DockPanel Grid.Column="1" Grid.Row="1">
+                <Label x:Name="FormatFileLb"  Content="Plik po konwersji" DockPanel.Dock="Top" FontSize="15" FontWeight="DemiBold" HorizontalContentAlignment="Center"  VerticalContentAlignment="Center"/>
+                <ScrollViewer  VerticalScrollBarVisibility="Auto">
+                    <TextBox x:Name="XMLFilePreviewTb" Text="Brak" TextWrapping="Wrap"/>
+                </ScrollViewer>
+            </DockPanel>
+        </Border>
+        <Label VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Content="Slyszales ze picie piwa poprawia radość z zycia?" Background="LightBlue" FontSize="15"  FontStyle="Italic" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Height="30"/>
     </Grid>
 </Window>
