@@ -15,9 +15,8 @@ using System.Windows;
 using System.Windows.Input;
 using System.Xml;
 using System.Xml.Linq;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace gender_bender
+namespace RedisXML
 {
     public static class RedisToXML
     {

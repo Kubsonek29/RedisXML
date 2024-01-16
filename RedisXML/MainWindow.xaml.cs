@@ -16,7 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Xml.Linq;
 
-namespace gender_bender
+namespace RedisXML
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
